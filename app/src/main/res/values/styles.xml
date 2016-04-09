@@ -14,6 +14,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TituloCardView" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/titulo_cardview</item>
+    </style>
+
+    <style name="DescricaoCardView" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">@dimen/descricao_cardview</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

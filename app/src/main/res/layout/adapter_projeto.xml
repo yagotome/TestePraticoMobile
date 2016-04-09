@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_horizontal_margin" android:clickable="true"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="6dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_borda_layout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            >
+            <android.support.v7.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                card_view:cardElevation="4dp"
+                card_view:cardCornerRadius="20dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img"/>
+            </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TituloCardView"
+                    android:text="Yago Tomé"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/DescricaoCardView"
+                    android:text="Developer at Storm"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_borda_layout"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <!-- Foto do carro -->
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="118dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img_artigo"/>
+                <!-- Barra de progresso enquanto carrega a foto -->
+                <ProgressBar
+                    android:id="@+id/progressImg"
+                    style="@android:style/Widget.ProgressBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:gravity="center|center_vertical"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_borda_layout"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="102dp"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+                    <TextView
+                        android:id="@+id/titulo_projeto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minLines="1"
+                        android:maxLines="2"
+                        android:text="Android Game / Making of Game Concept"
+                        style="@style/TituloCardView"/>
+                    <TextView
+                        android:id="@+id/descricao_projeto"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:minLines="1"
+                        android:maxLines="3"
+                        android:text="Game Design, Illustration, Coding, Android, Back-end, WebService, BigData, and much more."
+                        android:layout_marginTop="8dp"
+                        style="@style/DescricaoCardView"
+                        android:textColor="@color/textColorPrimary"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_borda_layout"
+                    android:weightSum="3"
+                    android:orientation="horizontal">
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:drawableLeft="@drawable/ic_thumb_up_black_18dp"
+                            android:drawableTint="@color/grey"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:drawablePadding="8dp"
+                            android:text="10k"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:drawableLeft="@drawable/ic_remove_red_eye_black_18dp"
+                            android:drawableTint="@color/grey"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:drawablePadding="8dp"
+                            android:text="68k"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:drawableLeft="@drawable/ic_mode_comment_black_18dp"
+                            android:drawableTint="@color/grey"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:drawablePadding="8dp"
+                            android:text="236"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
