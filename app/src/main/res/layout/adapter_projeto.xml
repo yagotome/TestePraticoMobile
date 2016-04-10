@@ -32,8 +32,7 @@
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/img_usuario"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/img"/>
+                            android:layout_height="match_parent"/>
                     </android.support.v7.widget.CardView>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -47,16 +46,14 @@
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:minLines="1"
-                            style="@style/TituloCardView"
-                            android:text="Yago Tomé"/>
+                            style="@style/TituloCardView"/>
                         <TextView
                             android:id="@+id/descricao_usuario"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:minLines="1"
-                            style="@style/DescricaoCardView"
-                            android:text="Developer at Storm"/>
+                            style="@style/DescricaoCardView"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -72,8 +69,7 @@
                         <ImageView
                             android:id="@+id/img_artigo"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/img_artigo"/>
+                            android:layout_height="match_parent"/>
                     </FrameLayout>
 
                     <LinearLayout
@@ -92,7 +88,6 @@
                                 android:layout_height="wrap_content"
                                 android:minLines="1"
                                 android:maxLines="2"
-                                android:text="Android Game / Making of Game Concept"
                                 style="@style/TituloCardView"/>
                             <TextView
                                 android:id="@+id/descricao_projeto"
@@ -100,7 +95,6 @@
                                 android:layout_height="44dp"
                                 android:minLines="1"
                                 android:maxLines="3"
-                                android:text="Game Design, Illustration, Coding, Android, Back-end, WebService, BigData, and much more."
                                 android:layout_marginTop="8dp"
                                 style="@style/DescricaoCardView"
                                 android:textColor="@color/textColorPrimary"/>
@@ -123,8 +117,7 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="8dp"
-                                    android:text="10k"/>
+                                    android:drawablePadding="8dp"/>
                             </FrameLayout>
                             <FrameLayout
                                 android:layout_width="0dp"
@@ -138,8 +131,7 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="8dp"
-                                    android:text="68k"/>
+                                    android:drawablePadding="8dp"/>
                             </FrameLayout>
                             <FrameLayout
                                 android:layout_width="0dp"
@@ -153,8 +145,7 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="8dp"
-                                    android:text="236"/>
+                                    android:drawablePadding="8dp"/>
                             </FrameLayout>
                         </LinearLayout>
                     </LinearLayout>
