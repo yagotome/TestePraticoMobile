@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import yagotome.testepraticomobile.R;
+import yagotome.testepraticomobile.adapter.ProjectAdapter;
 import yagotome.testepraticomobile.domain.Project;
 import yagotome.testepraticomobile.domain.ProjectService;
 
@@ -38,6 +39,21 @@ public class ProjectsFragment extends BaseFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         projects = ProjectService.getProjetos(getContext());
-        //recyclerView.setAdapter();
+        recyclerView.setAdapter(new ProjectAdapter(getContext(), projects, new ProjectAdapter.ProjectOnClickListener() {
+            @Override
+            public void projectImageOnClick(View view, int position) {
+                //abrir projeto
+            }
+
+            @Override
+            public void likesOnClick(View view, int position) {
+                //dar like
+            }
+
+            @Override
+            public void commentsOnClick(View view, int position) {
+                //abrir comments
+            }
+        }));
     }
 }

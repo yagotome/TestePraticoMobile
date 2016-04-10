@@ -51,9 +51,24 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         holder.views.setText(p.getViews());
         holder.comments.setText(p.getComments());
         if (projectOnClickListener != null) {
-            holder.imgProjeto.setOnClickListener((view) -> projectOnClickListener.projectImageOnClick(view, position));
-            holder.likes.setOnClickListener((view) -> projectOnClickListener.likesOnClick(view, position));
-            holder.comments.setOnClickListener((view) -> projectOnClickListener.commentsOnClick(view, position));
+            holder.imgProjeto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    projectOnClickListener.projectImageOnClick(view, position);
+                }
+            });
+            holder.likes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    projectOnClickListener.likesOnClick(view, position);
+                }
+            });
+            holder.comments.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    projectOnClickListener.commentsOnClick(view, position);
+                }
+            });
         }
     }
 
