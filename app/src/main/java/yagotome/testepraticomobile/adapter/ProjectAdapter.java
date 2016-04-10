@@ -39,7 +39,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     }
 
     @Override
-    public void onBindViewHolder(final ProjectsViewHolder holder, int position) {
+    public void onBindViewHolder(final ProjectsViewHolder holder, final int position) {
         Project p = projects.get(position);
         carregaImagem(p.getUsuario().getPicture().getUrl(), holder.imgUsuario, holder.progressBar);
         holder.nomeUsuario.setText(p.getUsuario().getNome());
@@ -47,6 +47,17 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         carregaImagem(p.getPicture().getUrl(), holder.imgProjeto, holder.progressBar);
         holder.tituloProjeto.setText(p.getTitulo());
         holder.descricaoProjeto.setText(p.getDescricao());
+        holder.likes.setText(p.getLikes());
+        holder.views.setText(p.getViews());
+        holder.comments.setText(p.getComments());
+        if (projectOnClickListener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    projectOnClickListener.onClick(holder.itemView, position);
+                }
+            });
+        }
     }
 
     private void carregaImagem (String url, ImageView img, final ProgressBar progress) {
