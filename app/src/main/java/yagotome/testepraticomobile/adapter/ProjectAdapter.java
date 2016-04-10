@@ -51,28 +51,26 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         holder.views.setText(p.getViews());
         holder.comments.setText(p.getComments());
         if (projectOnClickListener != null) {
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    projectOnClickListener.onClick(holder.itemView, position);
-                }
-            });
+            holder.imgProjeto.setOnClickListener((view) -> projectOnClickListener.projectImageOnClick(view, position));
+            holder.likes.setOnClickListener((view) -> projectOnClickListener.likesOnClick(view, position));
+            holder.comments.setOnClickListener((view) -> projectOnClickListener.commentsOnClick(view, position));
         }
     }
 
     private void carregaImagem (String url, ImageView img, final ProgressBar progress) {
         progress.setVisibility(View.VISIBLE);
         Picasso.with(context).load(url).fit().into(img,
-            new Callback() {
-                @Override
-                public void onSuccess() {
-                    progress.setVisibility(View.GONE);
-                }
-                @Override
-                public void onError() {
-                    progress.setVisibility(View.GONE);
-                }
-            });
+                new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        progress.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onError() {
+                        progress.setVisibility(View.GONE);
+                    }
+                });
     }
 
     @Override
@@ -81,7 +79,9 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     }
 
     public interface ProjectOnClickListener {
-        void onClick(View view, int position);
+        void projectImageOnClick(View view, int position);
+        void likesOnClick(View view, int position);
+        void commentsOnClick(View view, int position);
     }
 
     public static class ProjectsViewHolder extends RecyclerView.ViewHolder {
