@@ -8,8 +8,18 @@ import android.support.annotation.Nullable;
 public class Usuario {
     private long id;
     private String nome;
+    private String profissao;
     @Nullable private Empresa empresa;
     private Picture picture;
+
+    public String getProfissao() {
+        return profissao;
+    }
+
+    public Usuario setProfissao(String profissao) {
+        this.profissao = profissao;
+        return this;
+    }
 
     public long getId() {
         return id;
