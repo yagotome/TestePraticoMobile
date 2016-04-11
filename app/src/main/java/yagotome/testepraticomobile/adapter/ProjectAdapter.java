@@ -1,7 +1,6 @@
 package yagotome.testepraticomobile.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,7 +53,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         holder.descricaoProjeto.setText(p.getDescricao());
         holder.likes.setText(p.getLikes());
         holder.views.setText(p.getViews());
-        holder.comments.setText(p.getComments());
+        holder.comments.setText(p.getQtdComments());
         if (projectOnClickListener != null) {
             holder.imgProjeto.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -131,7 +130,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
             progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
             likes = (TextView) view.findViewById(R.id.likes);
             views = (TextView) view.findViewById(R.id.views);
-            comments = (TextView) view.findViewById(R.id.comments);
+            comments = (TextView) view.findViewById(R.id.qtdComments);
             layoutContent = view.findViewById(R.id.layout_content);
         }
     }

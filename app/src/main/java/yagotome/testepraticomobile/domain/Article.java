@@ -11,8 +11,8 @@ public class Article extends Project {
     public Article(){}
 
     public Article(long id, String titulo, String descricao, List<String> tags, Picture picture
-            , String texto, Usuario usuario, String likes, String views, String comments) {
-        super(titulo, descricao, tags, picture, usuario, likes, views, comments);
+            , String texto, Usuario usuario, String likes, String views, String qtdComments, List<Comment> comments) {
+        super(titulo, descricao, tags, picture, usuario, likes, views, qtdComments, comments);
         this.texto = texto;
     }
 

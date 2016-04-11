@@ -14,11 +14,13 @@ public class Project {
     private Usuario usuario;
     private String likes;
     private String views;
-    private String comments;
+    private String qtdComments;
+    private List<Comment> comments;
 
     public Project() {}
 
-    public Project(String titulo, String descricao, List<String> tags, Picture picture, Usuario usuario, String likes, String views, String comments) {
+    public Project(String titulo, String descricao, List<String> tags, Picture picture
+            , Usuario usuario, String likes, String views, String qtdComments, List<Comment> comments) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.tags = tags;
@@ -26,6 +28,15 @@ public class Project {
         this.usuario = usuario;
         this.likes = likes;
         this.views = views;
+        this.qtdComments = qtdComments;
+        this.comments = comments;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
 
@@ -53,12 +64,12 @@ public class Project {
         this.views = views;
     }
 
-    public String getComments() {
-        return comments;
+    public String getQtdComments() {
+        return qtdComments;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
+    public void setQtdComments(String qtdComments) {
+        this.qtdComments = qtdComments;
     }
 
     public Picture getPicture() {

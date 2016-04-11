@@ -3,8 +3,6 @@ package yagotome.testepraticomobile.adapter;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.test.AndroidTestCase;
-import android.test.UiThreadTest;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -48,7 +46,7 @@ public class ProjectAdapterTest extends AndroidTestCase {
                     .setEmpresa(new Empresa("Storm")));
             project.setLikes(i + "k");
             project.setViews(i*i + "k");
-            project.setComments(100*i + i*i + "");
+            project.setQtdComments(100 * i + i * i + "");
             projects.add(project);
         }
         adapter = new ProjectAdapter(getContext(), projects, null);
@@ -80,6 +78,6 @@ public class ProjectAdapterTest extends AndroidTestCase {
         assertEquals(p.getDescricao(), holder.descricaoProjeto.getText().toString());
         assertEquals(p.getLikes(), holder.likes.getText().toString());
         assertEquals(p.getViews(), holder.views.getText().toString());
-        assertEquals(p.getComments(), holder.comments.getText().toString());
+        assertEquals(p.getQtdComments(), holder.comments.getText().toString());
     }
 }
