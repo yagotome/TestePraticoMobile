@@ -10,8 +10,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import static yagotome.testepraticomobile.util.Utils.carregaImagem;
 
 import java.util.List;
 
@@ -42,13 +41,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     @Override
     public void onBindViewHolder(final ProjectsViewHolder holder, final int position) {
         Project p = projects.get(position);
-        carregaImagem(p.getUsuario().getPicture().getUrl(), holder.imgUsuario, holder.progressBar);
+        carregaImagem(holder.imgUsuario, p.getUsuario().getPicture().getUrl(), holder.progressBar, context, TAG);
         holder.nomeUsuario.setText(p.getUsuario().getNome());
         holder.descricaoUsuario.setText(
                 p.getUsuario().getProfissao()
                 + (p.getUsuario().getEmpresa() != null ? " at " + p.getUsuario().getEmpresa().getNome() : "")
         );
-        carregaImagem(p.getPicture().getUrl(), holder.imgProjeto, holder.progressBar);
+        carregaImagem(holder.imgProjeto, p.getPicture().getUrl(), holder.progressBar, context, TAG);
         holder.tituloProjeto.setText(p.getTitulo());
         holder.descricaoProjeto.setText(p.getDescricao());
         holder.likes.setText(p.getLikes());
@@ -78,24 +77,6 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         holder.progressBar.setVisibility(View.GONE);
     }
 
-    private void carregaImagem (String url, final ImageView img, final ProgressBar progress) {
-        Log.i(TAG, "Carregando imagem");
-        Picasso.with(context).load(url).fit().into(img,
-                new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        //progress.setVisibility(View.GONE);
-                        Log.i(TAG, "Imagem carregada com sucesso.");
-                    }
-
-                    @Override
-                    public void onError() {
-                        //progress.setVisibility(View.GONE);
-                        Log.i(TAG, "Erro ao carregar imagem.");
-                    }
-                });
-    }
-
     @Override
     public int getItemCount() {
         return projects != null ? projects.size() : 0;
@@ -107,7 +88,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         void commentsOnClick(View view, int position);
     }
 
-    public static class ProjectsViewHolder extends RecyclerView.ViewHolder {
+    static class ProjectsViewHolder extends RecyclerView.ViewHolder {
         protected ImageView imgUsuario;
         protected TextView nomeUsuario;
         protected TextView descricaoUsuario;

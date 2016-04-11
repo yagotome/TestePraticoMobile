@@ -28,8 +28,10 @@ public class ProjectService {
             List<Comment> comments = new ArrayList<>();
             int n = new Random().nextInt(15)+1;
             for (int j = 0; j < n; j++) {
-                comments.add(new Comment(projects.get(new Random().nextInt(i)).getUsuario()
-                        , "Cometário de teste " + j));
+                if (i > 0) {
+                    comments.add(new Comment(projects.get(new Random().nextInt(i)).getUsuario()
+                            , "Muito bom! Cometário de teste " + j));
+                }
             }
             project.setComments(comments);
 

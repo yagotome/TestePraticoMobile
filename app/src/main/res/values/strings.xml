@@ -6,4 +6,5 @@
     <string name="projects">Projects</string>
     <string name="work_in_progress">Work in progress</string>
     <string name="people">People</string>
+    <string name="dialog_fragment_comments_title">Comentários</string>
 </resources>

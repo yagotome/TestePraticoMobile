@@ -2,6 +2,7 @@ package yagotome.testepraticomobile.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -56,6 +57,10 @@ public class ProjectsFragment extends BaseFragment {
             @Override
             public void commentsOnClick(View view, int position) {
                 //abrir comments
+                FragmentManager fm = getFragmentManager();
+                CommentsDialogFragment comments = CommentsDialogFragment.newInstance(projects.get(position).getComments());
+
+                comments.show(fm, "Comments");
             }
         }));
     }

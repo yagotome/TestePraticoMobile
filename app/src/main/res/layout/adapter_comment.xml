@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/comment_margin">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/comment_img_usuario"
+        android:layout_width="@dimen/comment_foto_usuario"
+        android:layout_height="@dimen/comment_foto_usuario"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/comment_margin_texto"
+        android:layout_marginLeft="@dimen/comment_espaco_entre_foto_e_texto">
+        <TextView
+            android:id="@+id/comment_nome_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="1"
+            android:maxLines="1"
+            style="@style/TituloCardView"/>
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="1"
+            android:maxLines="2"
+            style="@style/DescricaoCardView"/>
+    </LinearLayout>
+</LinearLayout>
