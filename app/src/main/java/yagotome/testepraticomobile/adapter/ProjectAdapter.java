@@ -45,7 +45,10 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         Project p = projects.get(position);
         carregaImagem(p.getUsuario().getPicture().getUrl(), holder.imgUsuario, holder.progressBar);
         holder.nomeUsuario.setText(p.getUsuario().getNome());
-        holder.descricaoUsuario.setText(p.getUsuario().getNome());
+        holder.descricaoUsuario.setText(
+                p.getUsuario().getProfissao()
+                + (p.getUsuario().getEmpresa() != null ? " at " + p.getUsuario().getEmpresa().getNome() : "")
+        );
         carregaImagem(p.getPicture().getUrl(), holder.imgProjeto, holder.progressBar);
         holder.tituloProjeto.setText(p.getTitulo());
         holder.descricaoProjeto.setText(p.getDescricao());
