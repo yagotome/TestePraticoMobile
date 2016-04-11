@@ -15,12 +15,15 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         app = ProvaMobileApplication.getInstance();
+    }
 
-        //Adicionando a action bar
-        if (findViewById(R.id.toolbar) != null) {
-            setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+    /**
+     * Adiciona a toolbar como action bar
+     */
+    protected void setUpActionBar(final int id) {
+        if (findViewById(id) != null) {
+            setSupportActionBar((Toolbar)findViewById(id));
         }
     }
 }
