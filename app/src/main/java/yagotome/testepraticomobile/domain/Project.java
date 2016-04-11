@@ -33,36 +33,32 @@ public class Project {
         return id;
     }
 
-    public Project setId(long id) {
+    public void setId(long id) {
         this.id = id;
-        return this;
     }
 
     public String getLikes() {
         return likes;
     }
 
-    public Project setLikes(String likes) {
+    public void setLikes(String likes) {
         this.likes = likes;
-        return this;
     }
 
     public String getViews() {
         return views;
     }
 
-    public Project setViews(String views) {
+    public void setViews(String views) {
         this.views = views;
-        return this;
     }
 
     public String getComments() {
         return comments;
     }
 
-    public Project setComments(String comments) {
+    public void setComments(String comments) {
         this.comments = comments;
-        return this;
     }
 
     public Picture getPicture() {
