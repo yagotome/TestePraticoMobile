@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class ProjectsFragment extends BaseFragment {
     private RecyclerView recyclerView;
     private List<Project> projects;
     private LinearLayoutManager mLayoutManager;
+    private static final String TAG = "ProjectsFragment";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class ProjectsFragment extends BaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Log.i(TAG, "Chamando serviço que pega projetos.");
         projects = ProjectService.getProjetos(getContext());
         recyclerView.setAdapter(new ProjectAdapter(getContext(), projects, new ProjectAdapter.ProjectOnClickListener() {
             @Override

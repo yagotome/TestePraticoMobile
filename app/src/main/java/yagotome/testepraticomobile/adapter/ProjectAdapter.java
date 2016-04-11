@@ -3,6 +3,7 @@ package yagotome.testepraticomobile.adapter;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     private final Context context;
     private final List<Project> projects;
     private ProjectOnClickListener projectOnClickListener;
+    private static final String TAG = "ProjectAdapter";
 
     public ProjectAdapter(Context context, List<Project> projects, ProjectOnClickListener projectOnClickListener) {
         this.context = context;
@@ -70,20 +72,24 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
                 }
             });
         }
+        holder.layoutContent.setVisibility(View.VISIBLE);
+        holder.progressBar.setVisibility(View.GONE);
     }
 
-    private void carregaImagem (String url, ImageView img, final ProgressBar progress) {
-        progress.setVisibility(View.VISIBLE);
+    private void carregaImagem (String url, final ImageView img, final ProgressBar progress) {
+        Log.i(TAG, "Carregando imagem");
         Picasso.with(context).load(url).fit().into(img,
                 new Callback() {
                     @Override
                     public void onSuccess() {
-                        progress.setVisibility(View.GONE);
+                        //progress.setVisibility(View.GONE);
+                        Log.i(TAG, "Imagem carregada com sucesso.");
                     }
 
                     @Override
                     public void onError() {
-                        progress.setVisibility(View.GONE);
+                        //progress.setVisibility(View.GONE);
+                        Log.i(TAG, "Erro ao carregar imagem.");
                     }
                 });
     }
@@ -110,7 +116,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         protected TextView views;
         protected TextView comments;
         protected ProgressBar progressBar;
-        protected CardView cardView;
+        protected View layoutContent;
         public ProjectsViewHolder(View view) {
             super(view);
             imgUsuario = (ImageView) view.findViewById(R.id.img_usuario);
@@ -120,10 +126,10 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
             tituloProjeto = (TextView) view.findViewById(R.id.titulo_projeto);
             descricaoProjeto = (TextView) view.findViewById(R.id.descricao_projeto);
             progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
-            cardView = (CardView) view.findViewById(R.id.card_view);
             likes = (TextView) view.findViewById(R.id.likes);
             views = (TextView) view.findViewById(R.id.views);
             comments = (TextView) view.findViewById(R.id.comments);
+            layoutContent = view.findViewById(R.id.layout_content);
         }
     }
 
