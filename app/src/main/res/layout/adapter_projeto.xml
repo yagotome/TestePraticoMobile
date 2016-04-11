@@ -124,7 +124,7 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="8dp"/>
+                                    android:drawablePadding="@dimen/cardview_textviewDrawblePadding"/>
                             </FrameLayout>
                             <FrameLayout
                                 android:layout_width="0dp"
@@ -138,7 +138,7 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="8dp"/>
+                                    android:drawablePadding="@dimen/cardview_textviewDrawblePadding"/>
                             </FrameLayout>
                             <FrameLayout
                                 android:layout_width="0dp"
@@ -152,7 +152,7 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="8dp"/>
+                                    android:drawablePadding="@dimen/cardview_textviewDrawblePadding"/>
                             </FrameLayout>
                         </LinearLayout>
                     </LinearLayout>
