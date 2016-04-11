@@ -9,9 +9,10 @@
     tools:showIn="@layout/activity_main">
 
     <fragment
-        android:id="@+id/projects_fragment"
-        android:name="yagotome.testepraticomobile.fragment.ProjectsFragment"
+        android:id="@+id/tab_fragment"
+        android:name="yagotome.testepraticomobile.fragment.MainTabFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_projects"/>
+        tools:layout="@layout/fragment_main_tab"/>
+
 </RelativeLayout>
