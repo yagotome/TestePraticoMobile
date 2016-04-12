@@ -11,15 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            android:theme="@style/AppTheme.AppBarOverlay"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        <include layout="@layout/content_main" />
+        <include layout="@layout/include_toobar" />
+
+        <fragment
+            android:id="@+id/tab_fragment"
+            android:name="yagotome.testepraticomobile.fragment.MainTabFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_main_tab"/>
+
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton

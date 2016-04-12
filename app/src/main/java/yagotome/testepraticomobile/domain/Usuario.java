@@ -2,10 +2,12 @@ package yagotome.testepraticomobile.domain;
 
 import android.support.annotation.Nullable;
 
+import java.io.Serializable;
+
 /**
  * Classe de modelo para Usuario.
  */
-public class Usuario {
+public class Usuario implements Serializable {
     private long id;
     private String nome;
     private String profissao;

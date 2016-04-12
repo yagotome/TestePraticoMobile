@@ -12,6 +12,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionModeShareDrawable">@drawable/ic_share_white_24dp</item>
     </style>
 
     <style name="TituloCardView" parent="TextAppearance.AppCompat.Title">

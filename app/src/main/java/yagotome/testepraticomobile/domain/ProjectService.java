@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import yagotome.testepraticomobile.R;
+
 /**
  * Classe que vai ter serviços relacionados ao projeto.
  */
@@ -35,6 +37,12 @@ public class ProjectService {
             }
             project.setComments(comments);
 
+
+            if (i % 2 == 0) {
+                project = new Article(project, context.getString(R.string.project_service_teste_texto_artigo));
+            } else {
+                project = new Video(project, null);
+            }
             projects.add(project);
         }
         return projects;

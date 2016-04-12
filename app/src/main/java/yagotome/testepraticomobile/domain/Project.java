@@ -1,11 +1,12 @@
 package yagotome.testepraticomobile.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Classe de modelo para projeto.
  */
-public class Project {
+public class Project implements Serializable {
     private long id;
     private String titulo;
     private String descricao;

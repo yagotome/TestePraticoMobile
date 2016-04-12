@@ -1,9 +1,11 @@
 package yagotome.testepraticomobile.domain;
 
+import java.io.Serializable;
+
 /**
  * Classe de modelo de Empresa que um usuário pode trabalhar.
  */
-public class Empresa {
+public class Empresa implements Serializable {
     private String nome;
 
     public Empresa() {

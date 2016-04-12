@@ -1,9 +1,11 @@
 package yagotome.testepraticomobile.domain;
 
+import java.io.Serializable;
+
 /**
  * Classe de modelo para uma foto.
  */
-public class Picture {
+public class Picture implements Serializable {
     private String url;
     private String description;
 

@@ -1,9 +1,11 @@
 package yagotome.testepraticomobile.domain;
 
+import java.io.Serializable;
+
 /**
  * Classe de modelo de comentário.
  */
-public class Comment {
+public class Comment implements Serializable {
     private Usuario usuario;
     private String comment;
 

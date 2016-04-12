@@ -1,5 +1,6 @@
 package yagotome.testepraticomobile.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import yagotome.testepraticomobile.R;
+import yagotome.testepraticomobile.activity.ProjectViewActivity;
 import yagotome.testepraticomobile.adapter.ProjectAdapter;
 import yagotome.testepraticomobile.domain.Project;
 import yagotome.testepraticomobile.domain.ProjectService;
@@ -46,7 +48,11 @@ public class ProjectsFragment extends BaseFragment {
         recyclerView.setAdapter(new ProjectAdapter(getContext(), projects, new ProjectAdapter.ProjectOnClickListener() {
             @Override
             public void projectImageOnClick(View view, int position) {
-                //abrir projeto
+                Intent intent = new Intent(getContext(), ProjectViewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("projects", projects.get(position));
+                intent.putExtras(bundle);
+                getActivity().startActivity(intent);
             }
 
             @Override
