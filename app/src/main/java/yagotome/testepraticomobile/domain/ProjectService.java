@@ -16,22 +16,28 @@ public class ProjectService {
         List<Project> projects = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             Project project = new Project();
-            project.setTitulo("Project " + i);
-            project.setDescricao("Descrição do project " + i);
+            project.setTitle("Project " + i);
+            project.setDescription("Descrição do project " + i);
             String url = "http://imagens.canaltech.com.br/91951.148999-Melhores-jogos-para-Facebook.jpg";
             project.setPicture(new Picture(url, "Imagem do projeto de teste"));
             url = "http://3.bp.blogspot.com/-I0K7gS_96s0/Tf0YAbogMDI/AAAAAAAABP8/lUzhIG8AQ2g/s1600/lorem_ipsum.jpg";
-            project.setUsuario(new Usuario().setNome("User " + i).setPicture(new Picture(url, "Imagem do usuário de teste")));
+            project.setUser(new User()
+                            .setNome("User " + i)
+                            .setJob("Developer")
+                            .setPicture(new Picture(url, "Imagem do usuário de teste"))
+            );
+            if (i % 4 == 0) {
+                project.getUser().setCompany(new Company("Storm"));
+            }
             project.setLikes(i + "k");
             project.setViews(i * i + "k");
-            project.setQtdComments(100 * i + i * i + "");
 
             //adicionando comentários
             List<Comment> comments = new ArrayList<>();
-            int n = new Random().nextInt(15)+1;
+            int n = new Random().nextInt(21460)+1;
             for (int j = 0; j < n; j++) {
                 if (i > 0) {
-                    comments.add(new Comment(projects.get(new Random().nextInt(i)).getUsuario()
+                    comments.add(new Comment(projects.get(new Random().nextInt(i)).getUser()
                             , "Muito bom! Cometário de teste " + j));
                 }
             }
@@ -39,7 +45,7 @@ public class ProjectService {
 
 
             if (i % 2 == 0) {
-                project = new Article(project, context.getString(R.string.project_service_teste_texto_artigo));
+                project = new Article(project, context.getString(R.string.project_service_test_article_text));
             } else {
                 project = new Video(project, null);
             }

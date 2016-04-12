@@ -1,36 +1,34 @@
 package yagotome.testepraticomobile.domain;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * Classe de modelo de artigo.
  */
 public class Article extends Project {
-    private String texto;
+    private String text;
 
     public Article(){}
 
-    public Article(Project project, String textoArtigo) {
-        super(project.getTitulo(), project.getDescricao(), project.getTags(), project.getPicture()
-                , project.getUsuario(), project.getLikes(), project.getViews()
-                , project.getQtdComments(), project.getComments());
-        this.texto = textoArtigo;
+    public Article(Project project, String articleText) {
+        super(project.getTitle(), project.getDescription(), project.getTags(), project.getPicture()
+                , project.getUser(), project.getLikes(), project.getViews(), project.getComments());
+        this.text = articleText;
     }
 
     public Article(long id, String titulo, String descricao, List<String> tags, Picture picture
-            , String texto, Usuario usuario, String likes, String views, String qtdComments, List<Comment> comments) {
-        super(titulo, descricao, tags, picture, usuario, likes, views, qtdComments, comments);
-        this.texto = texto;
+            , String text, User user, String likes, String views, List<Comment> comments) {
+        super(titulo, descricao, tags, picture, user, likes, views, comments);
+        this.text = text;
     }
 
 
-    public String getTexto() {
-        return texto;
+    public String getText() {
+        return text;
     }
 
-    public Article setTexto(String texto) {
-        this.texto = texto;
+    public Article setText(String text) {
+        this.text = text;
         return this;
     }
 }

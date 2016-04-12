@@ -5,9 +5,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/cardview_margin"
+        android:layout_margin="@dimen/card_view_margin"
         card_view:cardBackgroundColor="@color/white"
-        card_view:cardElevation="@dimen/cardview_elevation">
+        card_view:cardElevation="@dimen/card_view_elevation">
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -20,7 +20,7 @@
                 android:visibility="invisible">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/cardview_layout_usuario_height"
+                    android:layout_height="@dimen/card_view_user_layout_height"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -33,8 +33,8 @@
                         card_view:cardCornerRadius="@dimen/cardview_layout_usuario_corner_radius">
                         -->
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/img_usuario"
-                            android:layout_width="@dimen/cardview_layout_usuario_height"
+                            android:id="@+id/user_img"
+                            android:layout_width="@dimen/card_view_user_layout_height"
                             android:layout_height="match_parent"
                             android:elevation="@dimen/cardview_default_elevation"
                             app:civ_border_width="2dp"
@@ -47,14 +47,14 @@
                         android:layout_marginLeft="@dimen/activity_horizontal_margin"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/nome_usuario"
+                            android:id="@+id/user_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:minLines="1"
                             style="@style/TituloCardView"/>
                         <TextView
-                            android:id="@+id/descricao_usuario"
+                            android:id="@+id/user_desc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:maxLines="1"
@@ -67,15 +67,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:background="@drawable/bg_borda_layout"
+                    android:background="@drawable/bg_border_layout"
                     android:layout_margin="@dimen/activity_horizontal_margin">
                     <FrameLayout
-                        android:layout_width="@dimen/cardview_layout_photo_width"
+                        android:layout_width="@dimen/card_view_layout_photo_width"
                         android:layout_height="match_parent"
-                        android:background="@drawable/bg_borda_layout"
+                        android:background="@drawable/bg_border_layout"
                         >
                         <ImageView
-                            android:id="@+id/img_artigo"
+                            android:id="@+id/project_img"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"/>
                     </FrameLayout>
@@ -83,22 +83,22 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/bg_borda_layout"
+                        android:background="@drawable/bg_border_layout"
                         android:orientation="vertical">
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/cardview_layout_descricao_height"
+                            android:layout_height="@dimen/card_view_desc_layout_height"
                             android:orientation="vertical"
                             android:padding="8dp">
                             <TextView
-                                android:id="@+id/titulo_projeto"
+                                android:id="@+id/project_title"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:minLines="1"
                                 android:maxLines="2"
                                 style="@style/TituloCardView"/>
                             <TextView
-                                android:id="@+id/descricao_projeto"
+                                android:id="@+id/project_desc"
                                 android:layout_width="match_parent"
                                 android:layout_height="44dp"
                                 android:minLines="1"
@@ -108,8 +108,8 @@
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/cardview_layout_likes_views_comment_height"
-                            android:background="@drawable/bg_borda_layout"
+                            android:layout_height="@dimen/card_view_layout_likes_views_comment_height"
+                            android:background="@drawable/bg_border_layout"
                             android:weightSum="3"
                             android:orientation="horizontal">
                             <FrameLayout
@@ -124,7 +124,7 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="@dimen/cardview_textviewDrawblePadding"/>
+                                    android:drawablePadding="@dimen/card_view_text_view_drawable_padding"/>
                             </FrameLayout>
                             <FrameLayout
                                 android:layout_width="0dp"
@@ -138,21 +138,21 @@
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="@dimen/cardview_textviewDrawblePadding"/>
+                                    android:drawablePadding="@dimen/card_view_text_view_drawable_padding"/>
                             </FrameLayout>
                             <FrameLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1">
                                 <TextView
-                                    android:id="@+id/qtdComments"
+                                    android:id="@+id/comments_amount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:drawableLeft="@drawable/ic_mode_comment_black_18dp"
                                     android:drawableTint="@color/grey"
                                     android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:drawablePadding="@dimen/cardview_textviewDrawblePadding"/>
+                                    android:drawablePadding="@dimen/card_view_text_view_drawable_padding"/>
                             </FrameLayout>
                         </LinearLayout>
                     </LinearLayout>

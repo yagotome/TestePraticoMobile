@@ -6,23 +6,23 @@ import java.io.Serializable;
  * Classe de modelo de comentário.
  */
 public class Comment implements Serializable {
-    private Usuario usuario;
+    private User user;
     private String comment;
 
     public Comment() {
     }
 
-    public Comment(Usuario usuario, String comment) {
-        this.usuario = usuario;
+    public Comment(User user, String comment) {
+        this.user = user;
         this.comment = comment;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public User getUser() {
+        return user;
     }
 
-    public Comment setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public Comment setUser(User user) {
+        this.user = user;
         return this;
     }
 

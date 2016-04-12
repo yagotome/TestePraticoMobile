@@ -15,7 +15,6 @@ import yagotome.testepraticomobile.adapter.TabsAdapter;
  */
 public class MainTabFragment extends BaseFragment implements TabLayout.OnTabSelectedListener {
     private static final String TAG = "MainTabFragment";
-    private TabLayout tabLayout;
     private ViewPager mViewPager;
 
     @Override
@@ -23,13 +22,13 @@ public class MainTabFragment extends BaseFragment implements TabLayout.OnTabSele
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_tab, container, false);
 
-        tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
+        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.projects));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.work_in_progress));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.people));
         tabLayout.setOnTabSelectedListener(this);
 
-        mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
+        mViewPager = (ViewPager) view.findViewById(R.id.view_pager);
         mViewPager.setOffscreenPageLimit(2);
         mViewPager.setAdapter(new TabsAdapter(getContext(), getChildFragmentManager()));
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

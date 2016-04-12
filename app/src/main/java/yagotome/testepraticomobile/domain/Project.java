@@ -1,5 +1,7 @@
 package yagotome.testepraticomobile.domain;
 
+import android.support.annotation.Nullable;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,36 +10,35 @@ import java.util.List;
  */
 public class Project implements Serializable {
     private long id;
-    private String titulo;
-    private String descricao;
+    private String title;
+    private String description;
     private List<String> tags;
     private Picture picture;
-    private Usuario usuario;
+    private User user;
     private String likes;
     private String views;
-    private String qtdComments;
-    private List<Comment> comments;
+    @Nullable private List<Comment> comments;
 
     public Project() {}
 
-    public Project(String titulo, String descricao, List<String> tags, Picture picture
-            , Usuario usuario, String likes, String views, String qtdComments, List<Comment> comments) {
-        this.titulo = titulo;
-        this.descricao = descricao;
+    public Project(String title, String description, List<String> tags, Picture picture
+            , User user, String likes, String views, @Nullable List<Comment> comments) {
+        this.title = title;
+        this.description = description;
         this.tags = tags;
         this.picture = picture;
-        this.usuario = usuario;
+        this.user = user;
         this.likes = likes;
         this.views = views;
-        this.qtdComments = qtdComments;
         this.comments = comments;
     }
 
+    @Nullable
     public List<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(List<Comment> comments) {
+    public void setComments(@Nullable List<Comment> comments) {
         this.comments = comments;
     }
 
@@ -65,12 +66,20 @@ public class Project implements Serializable {
         this.views = views;
     }
 
-    public String getQtdComments() {
-        return qtdComments;
-    }
-
-    public void setQtdComments(String qtdComments) {
-        this.qtdComments = qtdComments;
+    public String getCommentsAmount() {
+        if (comments == null || comments.size() == 0) {
+            return "0";
+        }
+        int num = comments.size();
+        int digits = 0;
+        for (int x = num; x > 0; digits++) {
+            x = x / 10;
+        }
+        String[] suf = {"k", "M", "G"};
+        String amount = String.valueOf(num);
+        int n = ((digits-1)%3)+1;
+        amount = amount.substring(0, n);
+        return amount + (digits < 4 ? "" : suf[(digits-1)/3 -1]);
     }
 
     public Picture getPicture() {
@@ -81,28 +90,28 @@ public class Project implements Serializable {
         this.picture = picture;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public User getUser() {
+        return user;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public List<String> getTags() {

@@ -29,10 +29,10 @@ public class ProjectViewActivity extends BaseActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        adicionaFragment();
+        addFragment();
     }
 
-    private void adicionaFragment() {
+    private void addFragment() {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         project = (Project)getIntent().getSerializableExtra("projects");
@@ -62,6 +62,10 @@ public class ProjectViewActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == android.R.id.home) {
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 }

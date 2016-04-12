@@ -5,9 +5,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/comment_margin">
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/comment_img_usuario"
-        android:layout_width="@dimen/comment_foto_usuario"
-        android:layout_height="@dimen/comment_foto_usuario"
+        android:id="@+id/comment_img_user"
+        android:layout_width="@dimen/comment_user_photo"
+        android:layout_height="@dimen/comment_user_photo"
         android:elevation="@dimen/cardview_default_elevation"
         app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"/>
@@ -15,10 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/comment_margin_texto"
-        android:layout_marginLeft="@dimen/comment_espaco_entre_foto_e_texto">
+        android:padding="@dimen/comment_text_margin"
+        android:layout_marginLeft="@dimen/comment_gap_between_photo_and_text">
         <TextView
-            android:id="@+id/comment_nome_usuario"
+            android:id="@+id/comment_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minLines="1"

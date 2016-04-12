@@ -9,12 +9,14 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import yagotome.testepraticomobile.R;
-import yagotome.testepraticomobile.domain.Empresa;
+import yagotome.testepraticomobile.domain.Comment;
+import yagotome.testepraticomobile.domain.Company;
 import yagotome.testepraticomobile.domain.Picture;
 import yagotome.testepraticomobile.domain.Project;
-import yagotome.testepraticomobile.domain.Usuario;
+import yagotome.testepraticomobile.domain.User;
 import yagotome.testepraticomobile.fragment.ProjectsFragment;
 
 /**
@@ -35,18 +37,29 @@ public class ProjectAdapterTest extends AndroidTestCase {
         projects = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             Project project = new Project();
-            project.setTitulo("Project " + i);
-            project.setDescricao("Descrição do project " + i);
+            project.setTitle("Project " + i);
+            project.setDescription("Descrição do project " + i);
             String url = "http://imagens.canaltech.com.br/91951.148999-Melhores-jogos-para-Facebook.jpg";
             project.setPicture(new Picture(url, "Imagem do projeto de teste"));
             url = "http://3.bp.blogspot.com/-I0K7gS_96s0/Tf0YAbogMDI/AAAAAAAABP8/lUzhIG8AQ2g/s1600/lorem_ipsum.jpg";
-            project.setUsuario(new Usuario()
+            project.setUser(new User()
                     .setNome("User " + i)
                     .setPicture(new Picture(url, "Imagem do usuário de teste"))
-                    .setEmpresa(new Empresa("Storm")));
+                    .setCompany(new Company("Storm")));
             project.setLikes(i + "k");
             project.setViews(i*i + "k");
-            project.setQtdComments(100 * i + i * i + "");
+
+            //adicionando comentários
+            List<Comment> comments = new ArrayList<>();
+            int n = new Random().nextInt(15)+1;
+            for (int j = 0; j < n; j++) {
+                if (i > 0) {
+                    comments.add(new Comment(projects.get(new Random().nextInt(i)).getUser()
+                            , "Muito bom! Cometário de teste " + j));
+                }
+            }
+            project.setComments(comments);
+
             projects.add(project);
         }
         adapter = new ProjectAdapter(getContext(), projects, null);
@@ -70,14 +83,14 @@ public class ProjectAdapterTest extends AndroidTestCase {
         });
         Thread.sleep(3000);
         Project p = projects.get(position);
-        assertEquals(p.getUsuario().getNome(), holder.nomeUsuario.getText().toString());
+        assertEquals(p.getUser().getNome(), holder.userName.getText().toString());
         //noinspection ConstantConditions
-        assertEquals(p.getUsuario().getProfissao() + " at " + p.getUsuario().getEmpresa().getNome()
-                , holder.descricaoUsuario.getText().toString());
-        assertEquals(p.getTitulo(), holder.tituloProjeto.getText().toString());
-        assertEquals(p.getDescricao(), holder.descricaoProjeto.getText().toString());
+        assertEquals(p.getUser().getJob() + " at " + p.getUser().getCompany().getName()
+                , holder.userDesc.getText().toString());
+        assertEquals(p.getTitle(), holder.projectTitle.getText().toString());
+        assertEquals(p.getDescription(), holder.projectDesc.getText().toString());
         assertEquals(p.getLikes(), holder.likes.getText().toString());
         assertEquals(p.getViews(), holder.views.getText().toString());
-        assertEquals(p.getQtdComments(), holder.comments.getText().toString());
+        assertEquals(p.getCommentsAmount(), holder.comments.getText().toString());
     }
 }

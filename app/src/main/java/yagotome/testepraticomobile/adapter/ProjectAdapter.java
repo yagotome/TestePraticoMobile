@@ -2,7 +2,6 @@ package yagotome.testepraticomobile.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import static yagotome.testepraticomobile.util.Utils.carregaImagem;
+import static yagotome.testepraticomobile.util.Utils.loadImage;
 
 import java.util.List;
 
@@ -41,25 +40,25 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     @Override
     public void onBindViewHolder(final ProjectsViewHolder holder, final int position) {
         Project p = projects.get(position);
-        carregaImagem(holder.imgUsuario, p.getUsuario().getPicture().getUrl(), holder.progressBar, context, TAG);
-        holder.imgUsuario.setContentDescription(p.getUsuario().getPicture().getDescription());
-        holder.nomeUsuario.setText(p.getUsuario().getNome());
-        holder.descricaoUsuario.setText(
-                p.getUsuario().getProfissao()
-                        + (p.getUsuario().getEmpresa() != null ? " at " + p.getUsuario().getEmpresa().getNome() : "")
+        loadImage(holder.userImg, p.getUser().getPicture().getUrl(), holder.progressBar, context, TAG);
+        holder.userImg.setContentDescription(p.getUser().getPicture().getDescription());
+        holder.userName.setText(p.getUser().getNome());
+        holder.userDesc.setText(
+                p.getUser().getJob()
+                        + (p.getUser().getCompany() != null ? " at " + p.getUser().getCompany().getName() : "")
         );
-        carregaImagem(holder.imgProjeto, p.getPicture().getUrl(), holder.progressBar, context, TAG);
-        holder.imgProjeto.setContentDescription(p.getPicture().getDescription());
-        holder.tituloProjeto.setText(p.getTitulo());
-        holder.descricaoProjeto.setText(p.getDescricao());
+        loadImage(holder.projectImg, p.getPicture().getUrl(), holder.progressBar, context, TAG);
+        holder.projectImg.setContentDescription(p.getPicture().getDescription());
+        holder.projectTitle.setText(p.getTitle());
+        holder.projectDesc.setText(p.getDescription());
         holder.likes.setText(p.getLikes());
         holder.likes.setContentDescription(p.getLikes() + " " + context.getString(R.string.likes));
         holder.views.setText(p.getViews());
         holder.views.setContentDescription(p.getViews() + " " + context.getString(R.string.views));
-        holder.comments.setText(p.getQtdComments());
-        holder.comments.setContentDescription(p.getQtdComments() + " " + context.getString(R.string.comments));
+        holder.comments.setText(p.getCommentsAmount());
+        holder.comments.setContentDescription(p.getCommentsAmount() + " " + context.getString(R.string.comments));
         if (projectOnClickListener != null) {
-            holder.imgProjeto.setOnClickListener(new View.OnClickListener() {
+            holder.projectImg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     projectOnClickListener.projectImageOnClick(view, position);
@@ -94,12 +93,12 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     }
 
     static class ProjectsViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView imgUsuario;
-        protected TextView nomeUsuario;
-        protected TextView descricaoUsuario;
-        protected ImageView imgProjeto;
-        protected TextView tituloProjeto;
-        protected TextView descricaoProjeto;
+        protected ImageView userImg;
+        protected TextView userName;
+        protected TextView userDesc;
+        protected ImageView projectImg;
+        protected TextView projectTitle;
+        protected TextView projectDesc;
         protected TextView likes;
         protected TextView views;
         protected TextView comments;
@@ -107,16 +106,16 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
         protected View layoutContent;
         public ProjectsViewHolder(View view) {
             super(view);
-            imgUsuario = (ImageView) view.findViewById(R.id.img_usuario);
-            nomeUsuario = (TextView) view.findViewById(R.id.nome_usuario);
-            descricaoUsuario = (TextView) view.findViewById(R.id.descricao_usuario);
-            imgProjeto = (ImageView) view.findViewById(R.id.img_artigo);
-            tituloProjeto = (TextView) view.findViewById(R.id.titulo_projeto);
-            descricaoProjeto = (TextView) view.findViewById(R.id.descricao_projeto);
+            userImg = (ImageView) view.findViewById(R.id.user_img);
+            userName = (TextView) view.findViewById(R.id.user_name);
+            userDesc = (TextView) view.findViewById(R.id.user_desc);
+            projectImg = (ImageView) view.findViewById(R.id.project_img);
+            projectTitle = (TextView) view.findViewById(R.id.project_title);
+            projectDesc = (TextView) view.findViewById(R.id.project_desc);
             progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
             likes = (TextView) view.findViewById(R.id.likes);
             views = (TextView) view.findViewById(R.id.views);
-            comments = (TextView) view.findViewById(R.id.qtdComments);
+            comments = (TextView) view.findViewById(R.id.comments_amount);
             layoutContent = view.findViewById(R.id.layout_content);
         }
     }

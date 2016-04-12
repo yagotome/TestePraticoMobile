@@ -6,7 +6,6 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,6 @@ import yagotome.testepraticomobile.domain.Comment;
 public class CommentsDialogFragment extends DialogFragment {
     private static final String TAG = "CommentsDialogFragment";
     private RecyclerView recyclerView;
-    private LinearLayoutManager mLayoutManager;
     private ProgressBar progressBar;
     private List<Comment> comments;
     public static CommentsDialogFragment newInstance(List<Comment> comments) {
@@ -39,8 +37,8 @@ public class CommentsDialogFragment extends DialogFragment {
 
         View view = inflater.inflate(R.layout.dialog_fragment_comments, container, false);
 
-        recyclerView = (RecyclerView)view.findViewById(R.id.lista_comments);
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerView = (RecyclerView)view.findViewById(R.id.comments_list);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);

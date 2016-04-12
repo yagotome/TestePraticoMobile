@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import static yagotome.testepraticomobile.util.Utils.carregaImagem;
+import static yagotome.testepraticomobile.util.Utils.loadImage;
 
 import yagotome.testepraticomobile.R;
 import yagotome.testepraticomobile.domain.Comment;
@@ -38,9 +38,9 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.Comments
     @Override
     public void onBindViewHolder(CommentsViewHolder holder, int position) {
         Comment comment = comments.get(position);
-        carregaImagem(holder.imgUsuario, comment.getUsuario().getPicture().getUrl(), context, TAG);
-        holder.imgUsuario.setContentDescription(comment.getUsuario().getPicture().getDescription());
-        holder.nomeUsuario.setText(comment.getUsuario().getNome());
+        loadImage(holder.userImg, comment.getUser().getPicture().getUrl(), context, TAG);
+        holder.userImg.setContentDescription(comment.getUser().getPicture().getDescription());
+        holder.userName.setText(comment.getUser().getNome());
         holder.comment.setText(comment.getComment());
     }
 
@@ -50,13 +50,13 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.Comments
     }
 
     static class CommentsViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView imgUsuario;
-        protected TextView nomeUsuario;
+        protected ImageView userImg;
+        protected TextView userName;
         protected TextView comment;
         public CommentsViewHolder(View itemView) {
             super(itemView);
-            imgUsuario = (ImageView)itemView.findViewById(R.id.comment_img_usuario);
-            nomeUsuario = (TextView)itemView.findViewById(R.id.comment_nome_usuario);
+            userImg = (ImageView)itemView.findViewById(R.id.comment_img_user);
+            userName = (TextView)itemView.findViewById(R.id.comment_user_name);
             comment = (TextView)itemView.findViewById(R.id.comment);
         }
     }

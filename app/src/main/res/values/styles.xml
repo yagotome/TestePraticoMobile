@@ -16,12 +16,12 @@
     </style>
 
     <style name="TituloCardView" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textSize">@dimen/titulo_cardview</item>
+        <item name="android:textSize">@dimen/card_view_title</item>
     </style>
 
     <style name="DescricaoCardView" parent="TextAppearance.AppCompat.Body1">
         <item name="android:textColor">@color/grey</item>
-        <item name="android:textSize">@dimen/descricao_cardview</item>
+        <item name="android:textSize">@dimen/card_view_desc</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

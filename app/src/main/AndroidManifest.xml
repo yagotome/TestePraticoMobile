@@ -21,11 +21,7 @@
         </activity>
         <activity
             android:name=".activity.ProjectViewActivity"
-            android:label="@string/title_activity_project"
-            android:parentActivityName=".activity.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.MainActivity" />
+            android:label="@string/title_activity_project">
         </activity>
     </application>
 
