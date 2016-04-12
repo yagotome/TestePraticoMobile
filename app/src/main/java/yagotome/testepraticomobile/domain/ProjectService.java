@@ -39,4 +39,10 @@ public class ProjectService {
         }
         return projects;
     }
+    public static void like(Project project) {
+        //Faz request de like ao back-end e atualiza like.
+    }
+    public static void dislike(Project project) {
+        //Faz request de dislike ao back-end e atualiza like.
+    }
 }

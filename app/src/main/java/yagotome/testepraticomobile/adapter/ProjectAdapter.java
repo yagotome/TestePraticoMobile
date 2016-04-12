@@ -42,17 +42,22 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     public void onBindViewHolder(final ProjectsViewHolder holder, final int position) {
         Project p = projects.get(position);
         carregaImagem(holder.imgUsuario, p.getUsuario().getPicture().getUrl(), holder.progressBar, context, TAG);
+        holder.imgUsuario.setContentDescription(p.getUsuario().getPicture().getDescription());
         holder.nomeUsuario.setText(p.getUsuario().getNome());
         holder.descricaoUsuario.setText(
                 p.getUsuario().getProfissao()
-                + (p.getUsuario().getEmpresa() != null ? " at " + p.getUsuario().getEmpresa().getNome() : "")
+                        + (p.getUsuario().getEmpresa() != null ? " at " + p.getUsuario().getEmpresa().getNome() : "")
         );
         carregaImagem(holder.imgProjeto, p.getPicture().getUrl(), holder.progressBar, context, TAG);
+        holder.imgProjeto.setContentDescription(p.getPicture().getDescription());
         holder.tituloProjeto.setText(p.getTitulo());
         holder.descricaoProjeto.setText(p.getDescricao());
         holder.likes.setText(p.getLikes());
+        holder.likes.setContentDescription(p.getLikes() + " " + context.getString(R.string.likes));
         holder.views.setText(p.getViews());
+        holder.views.setContentDescription(p.getViews() + " " + context.getString(R.string.views));
         holder.comments.setText(p.getQtdComments());
+        holder.comments.setContentDescription(p.getQtdComments() + " " + context.getString(R.string.comments));
         if (projectOnClickListener != null) {
             holder.imgProjeto.setOnClickListener(new View.OnClickListener() {
                 @Override

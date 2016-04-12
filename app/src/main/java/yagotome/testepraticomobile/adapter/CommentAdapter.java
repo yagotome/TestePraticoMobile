@@ -39,6 +39,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.Comments
     public void onBindViewHolder(CommentsViewHolder holder, int position) {
         Comment comment = comments.get(position);
         carregaImagem(holder.imgUsuario, comment.getUsuario().getPicture().getUrl(), context, TAG);
+        holder.imgUsuario.setContentDescription(comment.getUsuario().getPicture().getDescription());
         holder.nomeUsuario.setText(comment.getUsuario().getNome());
         holder.comment.setText(comment.getComment());
     }

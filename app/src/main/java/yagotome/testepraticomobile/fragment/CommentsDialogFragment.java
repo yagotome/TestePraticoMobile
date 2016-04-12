@@ -35,7 +35,7 @@ public class CommentsDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        getDialog().setTitle(getContext().getString(R.string.dialog_fragment_comments_title));
+        getDialog().setTitle(getContext().getString(R.string.comments));
 
         View view = inflater.inflate(R.layout.dialog_fragment_comments, container, false);
 
