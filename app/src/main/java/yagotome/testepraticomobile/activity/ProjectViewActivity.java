@@ -55,10 +55,14 @@ public class ProjectViewActivity extends BaseActivity {
             intent.setType("text/*");
             intent.putExtra(Intent.EXTRA_TEXT, project.getPicture().getUrl() + "\n"
                     + ((Article) project).getText());
-        } else if (project instanceof Video) {
+        }
+        /*
+        else if (project instanceof Video) {
             intent.setType("video/*");
+            intent.putExtra(Intent.EXTRA_SUBJECT, project.getTitle());
             intent.putExtra(Intent.EXTRA_STREAM, ((Video) project).getUri());
         }
+        */
 
         MenuItem menuItem = menu.findItem(R.id.action_share);
         ShareActionProvider share = new ShareActionProvider(this);
