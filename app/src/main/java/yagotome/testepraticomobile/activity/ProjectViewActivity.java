@@ -25,8 +25,11 @@ public class ProjectViewActivity extends BaseActivity {
 
         super.setUpActionBar(R.id.toolbar);
 
+        project = (Project)getIntent().getSerializableExtra("project");
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(project.getTitle());
         }
 
         addFragment();
@@ -35,7 +38,6 @@ public class ProjectViewActivity extends BaseActivity {
     private void addFragment() {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
-        project = (Project)getIntent().getSerializableExtra("projects");
         if (project instanceof Article) {
             transaction.add(R.id.layout_fragment_project_view, ArticleFragment.newInstance((Article) project));
         } else if (project instanceof Video) {
@@ -49,8 +51,17 @@ public class ProjectViewActivity extends BaseActivity {
         getMenuInflater().inflate(R.menu.menu_project, menu);
 
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/*");
-        intent.putExtra(Intent.EXTRA_TEXT, "Texto para compartilhar!");
+        if (project instanceof Article) {
+            intent.setType("text/*");
+            intent.putExtra(Intent.EXTRA_TEXT, project.getPicture().getUrl() + "\n"
+                    + ((Article) project).getText());
+        }
+        /*
+        else if (project instanceof Video) {
+            intent.setType("video/*");
+            intent.putExtra(Intent.EXTRA_STREAM, ((Video) project).getUri());
+        }
+        */
 
         MenuItem menuItem = menu.findItem(R.id.action_share);
         ShareActionProvider share = new ShareActionProvider(this);

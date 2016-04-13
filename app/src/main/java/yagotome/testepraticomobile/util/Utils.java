@@ -14,8 +14,9 @@ import com.squareup.picasso.Picasso;
  *
  */
 public class Utils {
+    private static final String TAG = "Utils";
     public static void loadImage(final ImageView img, String url
-            , @Nullable final ProgressBar progress, final Context context, final String TAG) {
+            , @Nullable final ProgressBar progress, final Context context) {
         Log.i(TAG, "Carregando imagem");
         Picasso.with(context).load(url).fit().into(img,
                 new Callback() {
@@ -37,7 +38,7 @@ public class Utils {
                 });
     }
     public static void loadImage(final ImageView img, String url
-            , final Context context, final String TAG) {
-        loadImage(img, url, null, context, TAG);
+            , final Context context) {
+        loadImage(img, url, null, context);
     }
 }

@@ -17,4 +17,6 @@
     <dimen name="comment_gap_between_photo_and_text">8dp</dimen>
     <dimen name="comment_text_margin">4dp</dimen>
     <dimen name="comment_margin">6dp</dimen>
+    <dimen name="article_text_margin">12dp</dimen>
+    <dimen name="article_image_height">256dp</dimen>
 </resources>

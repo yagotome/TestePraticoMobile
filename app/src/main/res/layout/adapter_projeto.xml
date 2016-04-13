@@ -75,7 +75,7 @@
                         android:background="@drawable/bg_border_layout"
                         >
                         <ImageView
-                            android:id="@+id/project_img"
+                            android:id="@+id/article_img"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"/>
                     </FrameLayout>

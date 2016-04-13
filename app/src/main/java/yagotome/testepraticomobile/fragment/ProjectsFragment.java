@@ -74,7 +74,7 @@ public class ProjectsFragment extends BaseFragment {
                     public void projectImageOnClick(View view, int position) {
                         Intent intent = new Intent(getContext(), ProjectViewActivity.class);
                         Bundle bundle = new Bundle();
-                        bundle.putSerializable("projects", projects.get(position));
+                        bundle.putSerializable("project", projects.get(position));
                         intent.putExtras(bundle);
                         getActivity().startActivity(intent);
                     }

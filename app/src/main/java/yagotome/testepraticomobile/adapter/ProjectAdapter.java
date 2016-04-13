@@ -40,14 +40,14 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
     @Override
     public void onBindViewHolder(final ProjectsViewHolder holder, final int position) {
         Project p = projects.get(position);
-        loadImage(holder.userImg, p.getUser().getPicture().getUrl(), holder.progressBar, context, TAG);
+        loadImage(holder.userImg, p.getUser().getPicture().getUrl(), holder.progressBar, context);
         holder.userImg.setContentDescription(p.getUser().getPicture().getDescription());
         holder.userName.setText(p.getUser().getNome());
         holder.userDesc.setText(
                 p.getUser().getJob()
                         + (p.getUser().getCompany() != null ? " at " + p.getUser().getCompany().getName() : "")
         );
-        loadImage(holder.projectImg, p.getPicture().getUrl(), holder.progressBar, context, TAG);
+        loadImage(holder.projectImg, p.getPicture().getUrl(), holder.progressBar, context);
         holder.projectImg.setContentDescription(p.getPicture().getDescription());
         holder.projectTitle.setText(p.getTitle());
         holder.projectDesc.setText(p.getDescription());
@@ -109,7 +109,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.Projects
             userImg = (ImageView) view.findViewById(R.id.user_img);
             userName = (TextView) view.findViewById(R.id.user_name);
             userDesc = (TextView) view.findViewById(R.id.user_desc);
-            projectImg = (ImageView) view.findViewById(R.id.project_img);
+            projectImg = (ImageView) view.findViewById(R.id.article_img);
             projectTitle = (TextView) view.findViewById(R.id.project_title);
             projectDesc = (TextView) view.findViewById(R.id.project_desc);
             progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);

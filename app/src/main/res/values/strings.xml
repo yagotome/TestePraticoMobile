@@ -19,10 +19,11 @@
     <string name="project_service_test_article_text">
         <![CDATA[
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada ex tellus, ut molestie dolor finibus vitae. Mauris ultricies ac libero sit amet finibus. In vitae sollicitudin nunc. Nulla tempus nisi at ante porta dictum. Sed ex sem, consequat sit amet nunc sit amet, luctus consequat ipsum. Fusce eleifend felis non ligula malesuada rutrum. Vivamus venenatis lacus sit amet molestie facilisis. Duis ipsum leo, congue quis iaculis nec, blandit sit amet mauris. In imperdiet venenatis lacus, eu luctus ligula pellentesque quis. Vivamus sodales efficitur hendrerit. Nunc semper elit quis tortor imperdiet semper. Praesent consectetur turpis urna. Morbi facilisis pharetra semper. Proin ut justo mi. Proin eget massa lectus. Pellentesque quis metus enim.
-
+            \n\n
             Suspendisse cursus lorem vel quam dignissim viverra a sed orci. Nam tempor lorem at felis fringilla fermentum. Nullam congue pretium mauris, id mollis eros laoreet eget. Quisque tellus felis, tincidunt ac sapien vitae, feugiat lobortis nunc. Proin id feugiat tortor. Aenean quam ex, scelerisque quis velit eu, egestas molestie est. Ut ut urna lacus. Suspendisse in accumsan nisi. Maecenas luctus congue fermentum. Nunc justo ligula, luctus nec consequat nec, semper vitae leo. Sed consectetur ligula quis dolor euismod, ut accumsan elit mollis.
-
+            \n\n
             Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus cursus urna id pellentesque aliquam. In ut sem nec massa mattis venenatis in ornare magna. Sed molestie diam sapien, non vehicula nibh aliquam id. Nulla eu orci hendrerit, venenatis nulla sed, mollis libero. Cras et nulla non nisl pellentesque tempus at ut nisi. Nunc malesuada ipsum quis sapien euismod tincidunt. Mauris nec quam quis sapien pellentesque tincidunt eu at justo.
+            \n
         ]]>
     </string>
 </resources>
