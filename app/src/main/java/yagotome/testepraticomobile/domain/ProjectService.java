@@ -47,7 +47,7 @@ public class ProjectService {
             if (i % 2 == 0) {
                 project = new Article(project, context.getString(R.string.project_service_test_article_text));
             } else {
-                project = new Video(project, null);
+                project = new Video(project, null, "https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4");
             }
             projects.add(project);
         }
