@@ -55,6 +55,9 @@ public class ProjectViewActivity extends BaseActivity {
             intent.setType("text/*");
             intent.putExtra(Intent.EXTRA_TEXT, project.getPicture().getUrl() + "\n"
                     + ((Article) project).getText());
+        } else if (project instanceof Video) {
+            intent.setType("text/*");
+            intent.putExtra(Intent.EXTRA_TEXT, ((Video) project).getUri());
         }
         /*
         else if (project instanceof Video) {
